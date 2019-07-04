@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bytedance.android.lesson.restapi.solution.bean.Cat;
+import com.bytedance.android.lesson.restapi.solution.newtork.ICatService;
 import com.bytedance.android.lesson.restapi.solution.utils.NetworkUtils;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -24,6 +26,12 @@ import com.google.gson.JsonParser;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.support.v7.widget.RecyclerView.Adapter;
 import static android.support.v7.widget.RecyclerView.ViewHolder;
@@ -90,11 +98,13 @@ public class Solution2C1Activity extends AppCompatActivity {
     public void requestData(View view) {
         //mBtn.setText(R.string.requesting);
         //mBtn.setEnabled(false);
-        //System.out.println("11111111111111");
+        System.out.println("11111111111111");
         // TODO-C1 (3) Send request for 5 random cats here, don't forget to use {@link retrofit2.Call#enqueue}
 
         String a = NetworkUtils.getResponseWithHttpURLConnection("https://api.thecatapi.com/v1/images/search?limit=5");
-        System.out.println(a);
+
+
+        //System.out.println(a);
         mCats.clear();
         Gson gson = new Gson();
         JsonParser jsonParser = new JsonParser();
@@ -103,29 +113,6 @@ public class Solution2C1Activity extends AppCompatActivity {
             Cat cat1 = gson.fromJson(cat, Cat.class);//解析
             mCats.add(cat1);
         }
-
-        /*int start=0,end,num;
-        int count= 0;
-        for(int i=0;i<a.length();i++){
-            if(a.charAt(i)=='{'){
-                if(count == 0){
-                    start=i;
-                    //count++;
-                }
-                count++;
-            }
-            else if(a.charAt(i)=='}'){
-                count--;
-                if(count==0){
-                    end=i;
-                    String single=a.substring(start,end+1);
-                    System.out.println(single);
-                    Gson gson = new Gson();
-                    Cat single_cat = gson.fromJson(single,Cat.class);
-                    mCats.add(single_cat);
-                }
-            }
-        }*/
 
         // Call restoreBtn() and loadPics(response.body()) if success
         // Call restoreBtn() if failure

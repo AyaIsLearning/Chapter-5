@@ -5,6 +5,7 @@ import com.bytedance.android.lesson.restapi.solution.bean.Cat;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * @author Xavier.S
@@ -12,5 +13,7 @@ import retrofit2.http.GET;
  */
 public interface ICatService {
     // TODO-C1 (2) Implement your Cat Request here, url: https://api.thecatapi.com/v1/images/search?limit=5
-    @GET("cats/random") Call<Cat> randomCat();
+    @GET("search?") Call<Cat> randomCat(
+            @Query("limit") int limit
+    );
 }
