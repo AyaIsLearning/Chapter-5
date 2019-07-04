@@ -168,7 +168,7 @@ public class Solution2C2Activity extends AppCompatActivity {
             return MultipartBody.Part.createFormData(name, URLEncoder.encode(f.getName(),"UTF-8") , requestFile);
         }catch (Exception e){
             e.getStackTrace();
-            return null;
+            return MultipartBody.Part.createFormData(name, f.getName(), requestFile);
         }
     }
 
