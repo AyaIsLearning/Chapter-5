@@ -1,6 +1,8 @@
 package com.bytedance.android.lesson.restapi.solution;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,10 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bytedance.android.lesson.restapi.solution.bean.Cat;
+import com.bytedance.android.lesson.restapi.solution.utils.NetworkUtils;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +40,20 @@ public class Solution2C1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solution2_c1);
         mBtn = findViewById(R.id.btn);
+        mBtn.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(final View v) {
+                mBtn.setText(R.string.requesting);
+                mBtn.setEnabled(false);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        requestData(v);
+                        mHandler.sendMessage(new Message());
+                    }
+                }).start();
+            }
+        });
+
         mRv = findViewById(R.id.rv);
         mRv.setLayoutManager(new LinearLayoutManager(this));
         mRv.setAdapter(new Adapter() {
@@ -47,8 +70,9 @@ public class Solution2C1Activity extends AppCompatActivity {
                 ImageView iv = (ImageView) viewHolder.itemView;
 
                 // TODO-C1 (4) Uncomment these 2 lines, assign image url of Cat to this url variable
-//                String url = mCats.get(i).;
-//                Glide.with(iv.getContext()).load(url).into(iv);
+                String url = mCats.get(i).getUrl();
+                //System.out.println(url);
+                Glide.with(iv.getContext()).load(url).into(iv);
             }
 
             @Override public int getItemCount() {
@@ -64,13 +88,47 @@ public class Solution2C1Activity extends AppCompatActivity {
     }
 
     public void requestData(View view) {
-        mBtn.setText(R.string.requesting);
-        mBtn.setEnabled(false);
-
+        //mBtn.setText(R.string.requesting);
+        //mBtn.setEnabled(false);
+        //System.out.println("11111111111111");
         // TODO-C1 (3) Send request for 5 random cats here, don't forget to use {@link retrofit2.Call#enqueue}
+
+        String a = NetworkUtils.getResponseWithHttpURLConnection("https://api.thecatapi.com/v1/images/search?limit=5");
+        System.out.println(a);
+        mCats.clear();
+        Gson gson = new Gson();
+        JsonParser jsonParser = new JsonParser();
+        JsonArray jsonElements = jsonParser.parse(a).getAsJsonArray();
+        for (JsonElement cat : jsonElements) {
+            Cat cat1 = gson.fromJson(cat, Cat.class);//解析
+            mCats.add(cat1);
+        }
+
+        /*int start=0,end,num;
+        int count= 0;
+        for(int i=0;i<a.length();i++){
+            if(a.charAt(i)=='{'){
+                if(count == 0){
+                    start=i;
+                    //count++;
+                }
+                count++;
+            }
+            else if(a.charAt(i)=='}'){
+                count--;
+                if(count==0){
+                    end=i;
+                    String single=a.substring(start,end+1);
+                    System.out.println(single);
+                    Gson gson = new Gson();
+                    Cat single_cat = gson.fromJson(single,Cat.class);
+                    mCats.add(single_cat);
+                }
+            }
+        }*/
+
         // Call restoreBtn() and loadPics(response.body()) if success
         // Call restoreBtn() if failure
-
     }
 
     private void loadPics(List<Cat> cats) {
@@ -82,4 +140,38 @@ public class Solution2C1Activity extends AppCompatActivity {
         mBtn.setText(R.string.request_data);
         mBtn.setEnabled(true);
     }
+
+
+    private final MyHandler mHandler = new MyHandler(this);
+
+    private static class MyHandler extends Handler {
+        private final WeakReference<Solution2C1Activity> mActivity;
+
+        public MyHandler(Solution2C1Activity activity) {
+            mActivity = new WeakReference<Solution2C1Activity>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            Solution2C1Activity activity = mActivity.get();
+            if (activity != null) {
+                //activity.mClockView.setShowAnalog(activity.mClockView.isShowAnalog());
+                super.handleMessage(msg);
+                if(activity.mCats.size()==0){
+                    activity.restoreBtn();
+                    //loadPics(mCats);
+                }
+                else{
+                    if(activity.mCats.size()<5){
+                        Toast.makeText(activity, "网络错误 部分图片丢失",Toast.LENGTH_LONG).show();
+                    }
+                    activity.restoreBtn();
+                    activity.loadPics(activity.mCats);
+                }
+            }
+        }
+    }
+
 }
+
+
