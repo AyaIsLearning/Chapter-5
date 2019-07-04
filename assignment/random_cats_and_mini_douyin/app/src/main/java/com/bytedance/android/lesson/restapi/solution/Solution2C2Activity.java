@@ -23,6 +23,7 @@ import com.bytedance.android.lesson.restapi.solution.utils.ResourceUtils;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,23 +65,20 @@ public class Solution2C2Activity extends AppCompatActivity {
         mBtn = findViewById(R.id.btn);
         mBtn.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                final String s = mBtn.getText().toString();
-
-                        if (getString(R.string.select_an_image).equals(s)) {
-                            chooseImage();
-                        } else if (getString(R.string.select_a_video).equals(s)) {
-                            chooseVideo();
-                        } else if (getString(R.string.post_it).equals(s)) {
-                            if (mSelectedVideo != null && mSelectedImage != null) {
-                                postVideo();
-                            } else {
-                                throw new IllegalArgumentException("error data uri, mSelectedVideo = " + mSelectedVideo + ", mSelectedImage = " + mSelectedImage);
-                            }
-                        } else if ((getString(R.string.success_try_refresh).equals(s))) {
-                            mBtn.setText(R.string.select_an_image);
-                        }
-
-
+                String s = mBtn.getText().toString();
+                if (getString(R.string.select_an_image).equals(s)) {
+                    chooseImage();
+                } else if (getString(R.string.select_a_video).equals(s)) {
+                    chooseVideo();
+                } else if (getString(R.string.post_it).equals(s)) {
+                    if (mSelectedVideo != null && mSelectedImage != null) {
+                        postVideo();
+                    } else {
+                        throw new IllegalArgumentException("error data uri, mSelectedVideo = " + mSelectedVideo + ", mSelectedImage = " + mSelectedImage);
+                    }
+                } else if ((getString(R.string.success_try_refresh).equals(s))) {
+                    mBtn.setText(R.string.select_an_image);
+                }
             }
         });
 
@@ -166,7 +164,12 @@ public class Solution2C2Activity extends AppCompatActivity {
         // if NullPointerException thrown, try to allow storage permission in system settings
         File f = new File(ResourceUtils.getRealPath(Solution2C2Activity.this, uri));
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), f);
-        return MultipartBody.Part.createFormData(name, f.getName(), requestFile);
+        try {
+            return MultipartBody.Part.createFormData(name, URLEncoder.encode(f.getName(),"UTF-8") , requestFile);
+        }catch (Exception e){
+            e.getStackTrace();
+            return null;
+        }
     }
 
     private void postVideo() {

@@ -11,14 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b872639-1720-402b-b8f0-a1636f6ec9de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C1Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C1Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/Feed.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/Feed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/FeedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/FeedResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/PostVideoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/PostVideoResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/newtork/ICatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/newtork/ICatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/newtork/IMiniDouyinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/newtork/IMiniDouyinService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C1Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="330">
+              <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="215" column="33" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+            <state relative-caret-position="295">
+              <caret line="170" column="24" lean-forward="true" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1982#3014#0" expanded="true" />
@@ -137,12 +130,8 @@
                 <element signature="e#3013#3014#0" expanded="true" />
                 <element signature="e#3212#3360#0" expanded="true" />
                 <element signature="e#3359#3360#0" expanded="true" />
-                <element signature="method#chooseImage#0;class#Solution2C2Activity#0" />
                 <element signature="method#chooseVideo#0;class#Solution2C2Activity#0" />
-                <element signature="method#onActivityResult#0;class#Solution2C2Activity#0" />
                 <element signature="e#5819#5835#0" expanded="true" />
-                <element signature="method#getMultipartFromUri#0;class#Solution2C2Activity#0" />
-                <element signature="method#postVideo#0;class#Solution2C2Activity#0" />
                 <element signature="e#7492#7520#0" expanded="true" />
               </folding>
             </state>
@@ -191,10 +180,10 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/FeedResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/Feed.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/bean/PostVideoResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/newtork/ICatService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C1Activity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java" />
       </list>
     </option>
   </component>
@@ -274,7 +263,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="emulator-5554" />
+    <property name="device.picker.selection" value="127.0.0.1:5555" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
@@ -379,7 +368,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50141644" side_tool="true" weight="0.3297587" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49858356" visible="true" weight="0.3297587" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49858356" visible="true" weight="0.3297587" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -388,20 +377,20 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.3286119" />
-      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.32719547" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.49932975" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50067025" side_tool="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.33002833" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Android Profiler" order="9" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" weight="0.3297587" />
     </layout>
   </component>
   <component name="XDebuggerManager">
@@ -409,9 +398,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java</url>
-          <line>96</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java</url>
+          <line>163</line>
+          <properties />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -522,27 +523,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="215" column="33" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+        <state relative-caret-position="88">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C1Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1982#3014#0" expanded="true" />
-            <element signature="e#2152#2187#0" expanded="true" />
-            <element signature="e#2279#2313#0" expanded="true" />
-            <element signature="e#2405#2432#0" expanded="true" />
-            <element signature="e#2841#2880#0" expanded="true" />
-            <element signature="e#3013#3014#0" expanded="true" />
-            <element signature="e#3212#3360#0" expanded="true" />
-            <element signature="e#3359#3360#0" expanded="true" />
-            <element signature="method#chooseImage#0;class#Solution2C2Activity#0" />
-            <element signature="method#chooseVideo#0;class#Solution2C2Activity#0" />
-            <element signature="method#onActivityResult#0;class#Solution2C2Activity#0" />
-            <element signature="e#5819#5835#0" expanded="true" />
-            <element signature="method#getMultipartFromUri#0;class#Solution2C2Activity#0" />
-            <element signature="method#postVideo#0;class#Solution2C2Activity#0" />
-            <element signature="e#7492#7520#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -551,13 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="909">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -571,12 +557,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C1Activity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bytedance/android/lesson/restapi/solution/Solution2C2Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="295">
+          <caret line="170" column="24" lean-forward="true" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1982#3014#0" expanded="true" />
+            <element signature="e#2152#2187#0" expanded="true" />
+            <element signature="e#2279#2313#0" expanded="true" />
+            <element signature="e#2405#2432#0" expanded="true" />
+            <element signature="e#2841#2880#0" expanded="true" />
+            <element signature="e#3013#3014#0" expanded="true" />
+            <element signature="e#3212#3360#0" expanded="true" />
+            <element signature="e#3359#3360#0" expanded="true" />
+            <element signature="method#chooseVideo#0;class#Solution2C2Activity#0" />
+            <element signature="e#5819#5835#0" expanded="true" />
+            <element signature="e#7492#7520#0" expanded="true" />
           </folding>
         </state>
       </provider>
